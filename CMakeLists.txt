@@ -10,13 +10,13 @@ set(CXX_STANDARD 17)
 option(USE_QTQUICKCOMPILED_RESOURCES OFF)
 
 if(${USE_QTQUICKCOMPILED_RESOURCES})
-    find_package(Qt5QuickCompiler)
+    find_package(Qt6QuickCompiler)
     set(PROJECT_ADD_RESOURCES qtquick_compiler_add_resources)
 else()
-    set(PROJECT_ADD_RESOURCES qt5_add_resources)
+    set(PROJECT_ADD_RESOURCES qt6_add_resources)
 endif()
 
-find_package(Qt5 COMPONENTS Quick Core Gui REQUIRED)
+find_package(Qt6 COMPONENTS Quick Core Gui REQUIRED)
 
 cmake_language(CALL ${PROJECT_ADD_RESOURCES} KEYBOARD_LIBRARY_RESOURCES ${CMAKE_CURRENT_LIST_DIR}/OpenVirtualKeyboard/qml.qrc)
 
@@ -62,8 +62,8 @@ target_include_directories(
     OpenVirtualKeyboard
     PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/OpenVirtualKeyboard
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
+    ${Qt6Gui_PRIVATE_INCLUDE_DIRS}
+    ${Qt6Quick_PRIVATE_INCLUDE_DIRS}
 )
 set_target_properties(OpenVirtualKeyboard
     PROPERTIES
@@ -71,4 +71,4 @@ set_target_properties(OpenVirtualKeyboard
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/platforminputcontexts
 )
 
-target_link_libraries(OpenVirtualKeyboard PRIVATE Qt5::Core Qt5::Quick Qt5::Gui)
+target_link_libraries(OpenVirtualKeyboard PRIVATE Qt6::Core Qt6::Quick Qt6::Gui)

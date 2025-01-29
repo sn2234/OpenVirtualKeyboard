@@ -11,6 +11,8 @@
 #include <QStringList>
 #include <QQuickItem>
 #include <QScopeGuard>
+#include <QStringList>
+
 #include "openvirtualkeyboardinputcontext.h"
 #include "keyboardcreator.h"
 #include "injectedkeyboardpositioner.h"

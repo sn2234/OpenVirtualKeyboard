@@ -15,7 +15,6 @@
 #include "keyboardlayoutsprovider.h"
 
 class QQuickItem;
-class QStringList;
 class KeyboardCreator;
 class Key;
 class AbstractPositioner;

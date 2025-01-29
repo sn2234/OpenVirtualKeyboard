@@ -8,7 +8,7 @@ int main( int argc, char* argv[] )
 {
     // You may try to add any of the following optional parameters:
     // :animateRollout:immediateLoading:ownWindow:noContentScrolling
-    qputenv( "QT_IM_MODULE", "openvirtualkeyboard" );
+    qputenv( "QT_IM_MODULE", "openvirtualkeyboard:ownWindow:noContentScrolling" );
 
     QCoreApplication::setAttribute( Qt::AA_EnableHighDpiScaling );
     QLoggingCategory::setFilterRules( "*.debug=false\nopenvirtualkeyboard.debug=true\nqml.debug=true" );
